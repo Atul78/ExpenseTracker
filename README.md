@@ -20,13 +20,13 @@ A full-stack expense tracking web application built with the MERN stack. Track y
 
 ## Tech Stack
 
-| Layer     | Tech                                     |
-|-----------|------------------------------------------|
-| Frontend  | React 18, React Router v6, Recharts      |
-| Backend   | Node.js, Express.js                      |
-| Database  | MongoDB + Mongoose                       |
-| Styling   | Plain CSS with CSS variables (no UI lib) |
-| HTTP      | Axios                                    |
+| Layer    | Tech                                     |
+| -------- | ---------------------------------------- |
+| Frontend | React 18, React Router v6, Recharts      |
+| Backend  | Node.js, Express.js                      |
+| Database | MongoDB + Mongoose                       |
+| Styling  | Plain CSS with CSS variables (no UI lib) |
+| HTTP     | Axios                                    |
 
 ---
 
@@ -77,7 +77,7 @@ expense-tracker/
 ### Prerequisites
 
 - Node.js v18+
-- MongoDB running locally (or MongoDB Atlas URI)
+- MongoDB Atlas URI
 
 ---
 
@@ -86,8 +86,7 @@ expense-tracker/
 ```bash
 cd backend
 npm install
-cp .env.example .env
-# Edit .env and set your MONGO_URI if needed
+cp .env
 npm run dev
 ```
 
@@ -113,15 +112,16 @@ The `"proxy": "http://localhost:5000"` in `package.json` routes API calls automa
 
 ### Expenses
 
-| Method | Endpoint            | Description                         |
-|--------|---------------------|-------------------------------------|
-| GET    | /api/expenses       | List expenses (search, filter, page) |
-| GET    | /api/expenses/:id   | Get single expense                  |
-| POST   | /api/expenses       | Create expense                      |
-| PUT    | /api/expenses/:id   | Update expense                      |
-| DELETE | /api/expenses/:id   | Delete expense                      |
+| Method | Endpoint          | Description                          |
+| ------ | ----------------- | ------------------------------------ |
+| GET    | /api/expenses     | List expenses (search, filter, page) |
+| GET    | /api/expenses/:id | Get single expense                   |
+| POST   | /api/expenses     | Create expense                       |
+| PUT    | /api/expenses/:id | Update expense                       |
+| DELETE | /api/expenses/:id | Delete expense                       |
 
 **Query params for GET /api/expenses:**
+
 - `search` — text search on title/description
 - `category` — filter by category name
 - `startDate`, `endDate` — date range (ISO format)
@@ -130,9 +130,9 @@ The `"proxy": "http://localhost:5000"` in `package.json` routes API calls automa
 
 ### Dashboard
 
-| Method | Endpoint       | Description              |
-|--------|----------------|--------------------------|
-| GET    | /api/dashboard | Aggregated stats & charts|
+| Method | Endpoint       | Description               |
+| ------ | -------------- | ------------------------- |
+| GET    | /api/dashboard | Aggregated stats & charts |
 
 ---
 
